@@ -1,0 +1,106 @@
+@baseUrl = http://localhost:8000
+
+POST {{baseUrl}}/participants
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjRmYTUyYjBjNTcxODU0ZWM4ODIwYiIsInVzZXJJZCI6ImZ1bGx0aWx0IiwiaWF0IjoxNzMwNDc2NzUxLCJleHAiOjE3MzA0ODAzNTF9.iDe_s1B4wzoa51eqb1A_bQpLcOzl7rgzk3ygbSRzkLQ
+
+{
+    "name": "test log7",
+    "age": 18,
+    "role": "Producer"
+}
+
+###
+
+GET {{baseUrl}}/participants
+
+###
+
+GET {{baseUrl}}/participants/6723f17b4bff11ca60d6429f
+
+###
+
+PUT {{baseUrl}}/participants/672426584e665139ab1d57d8
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjQyMDE1ZjY5YjM2N2RlYzExYWVhNCIsInVzZXJJZCI6ImZ1bGx0aWx0IiwiaWF0IjoxNzMwNDIyMjk4LCJleHAiOjE3MzA0MjU4OTh9.Fc59uneY6CEvIQWphWTNAI54-XTmjkHgsccT8cnm5RM
+
+{
+    "name": "sample",
+    "age": 20,
+    "role": "Actor"
+}
+
+###
+
+DELETE {{baseUrl}}/participants/672434c02689510a9cfdc153
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjQyMDE1ZjY5YjM2N2RlYzExYWVhNCIsInVzZXJJZCI6ImZ1bGx0aWx0IiwiaWF0IjoxNzMwNDI1OTQxLCJleHAiOjE3MzA0Mjk1NDF9.XcsD3_YK3zaVkohcl9xmuqYW_vaqB9PROEmDgwu64Dk
+
+###
+
+POST {{baseUrl}}/movies
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjQyMDE1ZjY5YjM2N2RlYzExYWVhNCIsInVzZXJJZCI6ImZ1bGx0aWx0IiwiaWF0IjoxNzMwNDI1OTQxLCJleHAiOjE3MzA0Mjk1NDF9.XcsD3_YK3zaVkohcl9xmuqYW_vaqB9PROEmDgwu64Dk
+
+{
+    "movieName": "sample",
+    "movieDescription": "description",
+    "movieDuration": 1,
+    "movieRating": 8.1,
+    "genre": "Action",
+    "producer": "67243705c97829eb9d2c5a70",
+    "director":"672436fcc97829eb9d2c5a6d",
+    "actors":["672436edc97829eb9d2c5a64","672436f1c97829eb9d2c5a67"]
+}
+
+###
+
+GET {{baseUrl}}/movies
+
+###
+
+GET {{baseUrl}}/movies/6723f2f7deef32c892a82c2c
+
+###
+
+PUT {{baseUrl}}/movies/6723f2f7deef32c892a82c2c
+Content-type: application/json
+
+{
+    "movieName": "sample",
+    "movieDescription": "updated description",
+    "movieDuration": 100,
+    "movieRating": 8.1,
+    "genre": "Action",
+    "producer": "6723f17b4bff11ca60d6429f",
+    "director":"6723f16b4bff11ca60d6429d",
+    "actors":["6723f1844bff11ca60d642a1","6723f1884bff11ca60d642a3"]
+}
+
+###
+
+DELETE {{baseUrl}}/movies/6723f2a7deef32c892a82c1f
+
+###
+
+POST {{baseUrl}}/auth/register
+Content-type: application/json
+
+{
+    "name": "fulltilt",
+    "userId": "fulltilt",
+    "password": "password123"
+}
+
+###
+
+POST {{baseUrl}}/auth/login
+Content-type: application/json
+
+{
+    "userId": "fulltilt",
+    "password": "password123"
+}
+
+###
+
+GET {{baseUrl}}/healthCheck
